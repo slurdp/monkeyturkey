@@ -741,6 +741,7 @@ function randomGame() {
 
 const preferencesDefaults = {
     cloak: true,
+    title: false,
     cloakUrl: 'https://classroom.google.com',
     mask: true,
     maskTitle: 'Home',
@@ -753,11 +754,13 @@ if (localStorage.getItem('preferences') == null) {
 }
 const preferences = JSON.parse(localStorage.getItem('preferences'));
 const cloakCheckbox = document.getElementById('cloakCheckboxInput');
+const titleCheckbox = document.getElementById('titleCheckboxInput')
 const backgroundCheckbox = document.getElementById('backgroundCheckboxInput');
 const cloakUrl = document.getElementById('cloakUrlInput');
 const maskCheckbox = document.getElementById('maskCheckboxInput');
 const maskTitle = document.getElementById('maskTitleInput');
 const maskIcon = document.getElementById('maskIconInput');
+titleCheckbox.checked = preferences.title;
 cloakCheckbox.checked = preferences.cloak;
 cloakUrl.value = preferences.cloakUrl;
 maskCheckbox.checked = preferences.mask;
@@ -802,7 +805,7 @@ function updatePreset() {
 
 if (preferences.cloak && window.location.href == window.top.location.href) {
     if (popupsAllowed()) {
-        makecloak();
+        //makecloak();
     } else {
         currentMenu.fadeOut(300, () => {
             $('.cloaklaunch').fadeIn(200);

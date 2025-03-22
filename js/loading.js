@@ -4,17 +4,22 @@ let themes;
 
 function changeLoadingTip() {
     const tips = [
-        'Welcome to the land of Nothing!',
-        'Here there is absolutely nothing for you.',
-        'Just gotta wait for it to load',
-        "Shouldn't take any longer",
-        'Why are you here?',
-        'Just one more minute',
-        'Go read a book :)',
+        'making websites is hard',
+        'slurd made this',
+        'derek wants it',
+        'i dont really care - seby'
     ];
     const element = document.getElementsByClassName('loading-tip')[0];
-
-    element.textContent = 'Loading... \n' + tips[Math.floor(Math.random() * tips.length)];
+    const periods = [
+        ["."],
+        [".."],
+        ["..."]
+    ]
+    const elipsis = function() {
+        for (i=0; i < periods.length; i++) {
+            return periods[i]
+    }}
+    element.innerHTML = `Loading...<strong><em>` + tips[Math.floor(Math.random() * tips.length)] + '</em></strong>';
 }
 
 changeLoadingTip();

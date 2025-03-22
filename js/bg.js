@@ -17,8 +17,8 @@ const opt = {
     tail: 82,
 };
 
-changeTitleColor();
-
+//sets title color 
+document.getElementById('title').style.backgroundImage = `linear-gradient(0deg,hsl(275, 100%, 50%) 0%,hsl(278, 59%, 70%) 50%, hsl(287, 4%, 93%) 100%)`;
 const Particles = [];
 let time = 0;
 document.body.addEventListener('click', () => {
@@ -168,7 +168,7 @@ function windowResized() {
 }
 
 function changeTitleColor() {
-    document.getElementById('title').style.backgroundImage = `linear-gradient(hsl(${opt.h1 + 20}, ${opt.s1}%, ${
-        opt.l1
-    }%), hsl(${opt.h2}, ${opt.s2}%, ${opt.l2}%))`;
+  if (JSON.parse(localStorage.getItem('preferences')).title) {
+    document.getElementById('title').style.backgroundImage = `linear-gradient(hsl(${opt.h1 + 20}, ${opt.s1}%, ${opt.l1}%), hsl(${opt.h2}, ${opt.s2}%, ${opt.l2}%))`;
+  }
 }
