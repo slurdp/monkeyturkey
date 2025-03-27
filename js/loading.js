@@ -178,3 +178,59 @@ jQuery.fn.extend({
     fpsMeter.style.zIndex = '10000';
     fpsMeter.style.pointerEvents = 'none';
 })();
+
+/**
+ * Loads a font dynamically from Google Fonts.
+ *
+ * @param {string} fontName - The name of the font to load (e.g., "Krona One").
+ * @param {number} [fontWeight=400] - The font weight to load (e.g., 400, 700). Defaults to 400.
+ */
+function loadFont(fontName, fontWeight = 400) {
+    let fontUrl;
+  
+    if (fontName.includes('https://fonts.google.com/specimen/')) {
+      // Extract font name from the URL (e.g., "Roboto" from "https://fonts.google.com/specimen/Roboto")
+      const fontNameFromUrl = fontName.split('/').pop(); // Gets "Roboto"
+      fontUrl = `https://fonts.googleapis.com/css2?family=${fontNameFromUrl}:wght@${fontWeight}&display=swap`;
+    } else if (fontName.includes('https:')) {
+         fontUrl = `${fontName.replace('https://', 'https://fonts.googleapis.com/css2?family=')}:wght@${fontWeight}&display=swap`;
+    }
+     else {
+      // Assume it's a font name and construct the URL
+      fontUrl = `https://fonts.googleapis.com/css2?family=${fontName}:wght@${fontWeight}&display=swap`;
+    }
+  
+    // Create a new link element
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = fontUrl;
+  
+    link.onload = () => {
+      console.log(`Font "${fontName}" loaded successfully`);
+    };
+  
+    link.onerror = () => {
+      console.error(`Failed to load font "${fontName}"`);
+    };
+  
+    document.head.appendChild(link);
+  }
+  
+  
+// LOAD FONTS
+loadFont("https://fonts.google.com/specimen/Rubik+Glitch", 400);
+loadFont("https://fonts.google.com/specimen/Geo", 400);
+loadFont("https://fonts.google.com/specimen/Assistant", 400);
+loadFont("https://fonts.google.com/specimen/Keania+One", 400);
+loadFont("https://fonts.google.com/specimen/Boldonse", 400);
+loadFont("https://fonts.google.com/specimen/Chewy", 400);
+loadFont("https://fonts.google.com/specimen/Fredoka", 400);
+loadFont("https://fonts.google.com/specimen/Krona+One", 400);
+loadFont("https://fonts.google.com/specimen/Open+Sans", 400);
+loadFont("https://fonts.google.com/specimen/Rubik+Glitch", 400);
+loadFont("https://fonts.google.com/specimen/Tektur", 400);
+loadFont("https://fonts.google.com/specimen/Bokor", 400);
+loadFont("https://fonts.google.com/specimen/Libre+Baskerville", 700);
+loadFont("https://fonts.google.com/specimen/Shadows+Into+Light", 400)
+loadFont("https://fonts.google.com/specimen/Pangolin", 400)
+loadFont("https://fonts.google.com/specimen/Syne+Mono", 400)

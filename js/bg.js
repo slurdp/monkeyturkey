@@ -172,3 +172,4 @@ function changeTitleColor() {
     document.getElementById('title').style.backgroundImage = `linear-gradient(hsl(${opt.h1 + 20}, ${opt.s1}%, ${opt.l1}%), hsl(${opt.h2}, ${opt.s2}%, ${opt.l2}%))`;
   }
 }
+

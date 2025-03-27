@@ -802,10 +802,10 @@ function setPreset(object) {
 function updatePreset() {
     setPreset(presets[document.getElementById('presets').value]);
 }
-
+/*This is basically the cloak function 
 if (preferences.cloak && window.location.href == window.top.location.href) {
     if (popupsAllowed()) {
-        //makecloak();
+        makecloak();
     } else {
         currentMenu.fadeOut(300, () => {
             $('.cloaklaunch').fadeIn(200);
@@ -823,6 +823,8 @@ if (preferences.cloak && window.location.href == window.top.location.href) {
         });
     }
 }
+*/
+
 
 maskCheckbox.addEventListener('change', function () {
     preferences.mask = maskCheckbox.checked;
