@@ -1,6 +1,6 @@
 let currentMenu = $('.homepage');
 
-$('.column button .card').on('click', function () {
+$('.homepage .brutalist-card__button .card').on('click', function () {
     let nextMenu = this.getAttribute('data');
 
     if (nextMenu === 'proxy') {
@@ -219,7 +219,7 @@ const sequences = [
           }
       }
       if (failed) {
-          index = 0;
+          index = 0;``
       }
   });
 
